@@ -44,4 +44,71 @@ export const tasksRoute = [
       return response.end(JSON.stringify(tasks));
     },
   },
+  {
+    method: 'GET',
+    url: buildRoutePathUtil('/tasks/:id'),
+    handler: (request, response) => {
+      const { id } = request.params;
+      const task = databaseService.selectById('tasks', id);
+
+      return response.end(JSON.stringify(task));
+    },
+  },
+  {
+    method: 'PUT',
+    url: buildRoutePathUtil('/tasks/:id'),
+    handler: (request, response) => {
+      const { id } = request.params;
+      const { title, description } = request.body;
+
+      const allowedProperties = ['title', 'description'];
+      const receivedProperties = Object.keys(request.body);
+      const hasInvalidProperty = receivedProperties.some(
+        (key) => !allowedProperties.includes(key)
+      );
+      const isEmptyBody = !title && !description;
+
+      if (hasInvalidProperty || isEmptyBody) {
+        const statusCode = 400;
+
+        return response.writeHead(statusCode).end(
+          JSON.stringify({
+            statusCode,
+            message: 'Provide only known properties.',
+          })
+        );
+      }
+
+      const task = databaseService.selectById('tasks', id);
+
+      if (!task) {
+        const statusCode = 404;
+
+        return response.writeHead(statusCode).end(
+          JSON.stringify({
+            statusCode,
+            message: `Task Id '${id}' does not exist.`,
+          })
+        );
+      }
+
+      const updatedData = {};
+
+      if (title !== undefined) {
+        updatedData.title = title;
+      }
+
+      if (description !== undefined) {
+        updatedData.description = description;
+      }
+
+      updatedData.updated_at = new Date();
+
+      databaseService.update('tasks', id, {
+        ...updatedData,
+      });
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
