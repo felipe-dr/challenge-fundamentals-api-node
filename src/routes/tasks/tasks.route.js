@@ -16,14 +16,32 @@ export const tasksRoute = [
         id: randomUUID(),
         title,
         description,
-        completedAt: null,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        completed_at: null,
+        created_at: new Date(),
+        updated_at: new Date(),
       };
 
       databaseService.insert('tasks', task);
 
       return response.writeHead(201).end();
+    },
+  },
+  {
+    method: 'GET',
+    url: buildRoutePathUtil('/tasks'),
+    handler: (request, response) => {
+      const { search } = request.query;
+      const tasks = databaseService.select(
+        'tasks',
+        search
+          ? {
+              title: search,
+              description: search,
+            }
+          : null
+      );
+
+      return response.end(JSON.stringify(tasks));
     },
   },
 ];
