@@ -42,6 +42,7 @@ API desenvolvida em Node.js do Desafio 01, capaz de gerenciar tarefas, marcá-la
 
 - [ ] Criar tarefa
 - [ ] Listar tarefas
+- [ ] Listar tarefa(s) por filtro de busca em `title` ou `description`
 - [ ] Editar tarefa por `id`
 - [ ] Deletar tarefa por `id`
 - [ ] Marcar tarefa como completa por `id`
@@ -50,7 +51,6 @@ API desenvolvida em Node.js do Desafio 01, capaz de gerenciar tarefas, marcá-la
 ### Adicionais
 
 - [ ] Listar tarefa por `id`
-- [ ] Listar tarefa(s) por filtro de busca em `title` ou `description`
 - [ ] Validar se `title` e `description` das rotas `POST` e `PUT` estão presentes no `body` da requisição
 - [ ] Nas rotas que recebem o `/:id`, além de validar se o `id` existe no banco de dados, retornar a resposta com uma mensagem informando que o registro não existe.
 
