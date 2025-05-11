@@ -111,4 +111,28 @@ export const tasksRoute = [
       return response.writeHead(204).end();
     },
   },
+  {
+    method: 'DELETE',
+    url: buildRoutePathUtil('/tasks/:id'),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      const task = databaseService.selectById('tasks', id);
+
+      if (!task) {
+        const statusCode = 404;
+
+        return response.writeHead(statusCode).end(
+          JSON.stringify({
+            statusCode,
+            message: `Task Id '${id}' does not exist.`,
+          })
+        );
+      }
+
+      databaseService.delete('tasks', id);
+
+      return response.writeHead(204).end();
+    },
+  },
 ];
