@@ -102,7 +102,35 @@ export const tasksRoute = [
         updatedData.description = description;
       }
 
-      updatedData.updated_at = new Date();
+      databaseService.update('tasks', id, {
+        ...updatedData,
+      });
+
+      return response.writeHead(204).end();
+    },
+  },
+  {
+    method: 'PATCH',
+    url: buildRoutePathUtil('/tasks/:id/complete'),
+    handler: (request, response) => {
+      const { id } = request.params;
+
+      const task = databaseService.selectById('tasks', id);
+
+      if (!task) {
+        const statusCode = 404;
+
+        return response.writeHead(statusCode).end(
+          JSON.stringify({
+            statusCode,
+            message: `Task Id '${id}' does not exist.`,
+          })
+        );
+      }
+
+      const updatedData = {};
+
+      updatedData.completed_at = task.completed_at !== true;
 
       databaseService.update('tasks', id, {
         ...updatedData,
