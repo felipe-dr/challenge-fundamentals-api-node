@@ -58,10 +58,12 @@ export class DatabaseService {
 
     if (rowIndex > -1) {
       const currentTask = this.#database[table][rowIndex];
+      const updatedAt = { updated_at: new Date() };
 
       this.#database[table][rowIndex] = {
         id,
         ...currentTask,
+        ...updatedAt,
         ...data,
       };
       this.#persist();
