@@ -130,7 +130,7 @@ export const tasksRoute = [
 
       const updatedData = {};
 
-      updatedData.completed_at = task.completed_at !== true;
+      updatedData.completed_at = task.completed_at ? null : new Date();
 
       databaseService.update('tasks', id, {
         ...updatedData,
