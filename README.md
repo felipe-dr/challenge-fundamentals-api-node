@@ -21,7 +21,7 @@
     <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=Node.js&message=JS&logo=Node.js" alt="Node.js" />
   </a>
   <a target="_blank" href="https://csv.js.org/parse/">
-    <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=CSV Parse&message=JS&logo=" alt="CSV.parse" />
+    <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=CSV Parse&message=JS" alt="CSV.parse" />
   </a>
 </p>
 
