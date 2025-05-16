@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/github/last-commit/felipe-dr/challenge-fundamentals-api-node?style=for-the-badge&color=4e5acf" alt="Last commit on GitHub" />
   </a>
   <!-- <img src="https://img.shields.io/badge/license-MIT-4e5acf?style=for-the-badge" alt="License" /> -->
-  <img src="https://img.shields.io/badge/status-andamento-yellow?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/status-concluído-green?style=for-the-badge" alt="Status" />
 </p>
 
 <br>
@@ -19,6 +19,9 @@
 <p align="center">
   <a target="_blank" href="https://nodejs.org/en">
     <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=Node.js&message=JS&logo=Node.js" alt="Node.js" />
+  </a>
+  <a target="_blank" href="https://csv.js.org/parse/">
+    <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=CSV Parse&message=JS&logo=" alt="CSV.parse" />
   </a>
 </p>
 
@@ -40,19 +43,20 @@ API desenvolvida em Node.js do Desafio 01, capaz de gerenciar tarefas, marcá-la
 
 ### Obrigatórias
 
-- [ ] Criar tarefa
-- [ ] Listar tarefas
-- [ ] Listar tarefa(s) por filtro de busca em `title` ou `description`
-- [ ] Editar tarefa por `id`
-- [ ] Deletar tarefa por `id`
-- [ ] Marcar tarefa como completa por `id`
-- [ ] Importação de tarefas por um arquivo CSV
+- [x] Criar tarefa
+- [x] Listar tarefas
+- [x] Listar tarefa(s) por filtro de busca em `title` ou `description`
+- [x] Editar tarefa por `id`
+- [x] Deletar tarefa por `id`
+- [x] Marcar tarefa como completa por `id`
+- [x] Importação de tarefas por um arquivo `csv`
 
 ### Adicionais
 
-- [ ] Listar tarefa por `id`
-- [ ] Validar se `title` e `description` das rotas `POST` e `PUT` estão presentes no `body` da requisição
-- [ ] Nas rotas que recebem o `/:id`, além de validar se o `id` existe no banco de dados, retornar a resposta com uma mensagem informando que o registro não existe.
+- [x] Listar tarefa por `id`
+- [x] Implementar mensagens de log no serviço de upload do `csv`
+- [x] Validar se `title` e `description` das rotas `POST` e `PUT` estão presentes no `body` da requisição
+- [x] Nas rotas que recebem o `/:id`, além de validar se o `id` existe no banco de dados, retornar a resposta com uma mensagem informando que o registro não existe.
 
 ## Como executar
 
@@ -60,13 +64,26 @@ API desenvolvida em Node.js do Desafio 01, capaz de gerenciar tarefas, marcá-la
 
 Se estiver utilizando outro gerenciador de pacotes, basta trocar o `pnpm` por `npm`, `yarn`, etc.
 
+#### API
+
 ```bash
 pnpm dev
+```
+
+#### Upload de tarefas
+
+> **DEPENDÊNCIAS !**
+>
+> É necessário executar previamente a API conforme indicado no passo anterior, para que seja possível efetuar um `POST` em `/tasks`.
+
+```bash
+pnpm upload:csv
 ```
 
 ## Tecnologias
 
 - [Node.js](https://nodejs.org/en)
+- [CSVParse](https://csv.js.org/parse/)
 
 > **DICA !**
 >
