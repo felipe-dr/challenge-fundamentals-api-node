@@ -58,6 +58,10 @@ API desenvolvida em Node.js do Desafio 01, capaz de gerenciar tarefas, marcá-la
 - [x] Validar se `title` e `description` das rotas `POST` e `PUT` estão presentes no `body` da requisição
 - [x] Nas rotas que recebem o `/:id`, além de validar se o `id` existe no banco de dados, retornar a resposta com uma mensagem informando que o registro não existe.
 
+### Futuras
+
+- Criar e reutilizar através de classes, `status code` e mensagens nos retornos das respostas.
+
 ## Como executar
 
 ### Localmente
