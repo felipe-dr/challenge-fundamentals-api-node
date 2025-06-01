@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://avatars.githubusercontent.com/u/28929274?s=200&v=4" alt="Rocketseat" />
   <hr>
-  <h1 align="center">Desafio Fundamentos do Node.js</h1>
+  <h1 align="center">Desafio 01 Fundamentos do Node.js</h1>
   <p align="center">Projeto desenvolvido durante a formação <strong>Node.js</strong> da Rocketseat.</p>
 </p>
 
@@ -21,7 +21,7 @@
     <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=Node.js&message=JS&logo=Node.js" alt="Node.js" />
   </a>
   <a target="_blank" href="https://csv.js.org/parse/">
-    <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=CSV Parse&message=JS" alt="CSV.parse" />
+    <img src="https://img.shields.io/static/v1?style=plastic&color=blue&label=CSVParse&message=JS" alt="CSV.parse" />
   </a>
 </p>
 
