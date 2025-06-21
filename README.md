@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/28929274?s=200&v=4" alt="Rocketseat" />
+  <!-- <img src="https://avatars.githubusercontent.com/u/28929274?s=200&v=4" alt="Rocketseat" /> -->
   <hr>
   <h1 align="center">Desafio 01 Fundamentos do Node.js</h1>
-  <p align="center">Projeto desenvolvido durante a formação <strong>Node.js</strong> da Rocketseat.</p>
+  <p align="center">Projeto desenvolvido durante a formação <strong>Node.js</strong>.</p>
 </p>
 
 <p align="center">
